@@ -1,4 +1,4 @@
-# Docker + Reverse Proxy Nginx + Node.js + MySQL
+# Docker + Reverse Proxy Nginx + Node.js
 
 Mise en place d'une API Rest avec Node.js derrière un Reverse Proxy Nginx en tant que service Docker.
 
