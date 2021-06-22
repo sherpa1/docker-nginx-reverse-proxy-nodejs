@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+    whoami:
+        image: containous/whoami
+        container_name: whoami
+    #     ports: 
+    #         - 80:80
+    reverse-proxy:
+        image: nginx
+        volumes:
+            - ./nginxconf:/etc/nginx/conf.d
+        ports:
+            - 80:80
+            - 3000:3000
+    
+    api:
+        image: node
+        # ports:
+        #     - 3000:3000
+        volumes:
+            - ./api:/var/www/app
+        env_file: ./api/.env
+        working_dir: /var/www/app
+        #command: npm install
+        command: npm start
